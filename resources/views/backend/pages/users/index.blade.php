@@ -26,9 +26,11 @@
                         <th>Name</th>
                         <th>Profile</th>
                         <th>Email</th>
+                        <th>Status</th>
                         <th>Phone No</th>
-                        <th>Designation</th>
+                        {{-- <th>Designation</th> --}}
                         <th>Action</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -42,8 +44,11 @@
                                 </a>
                             </td>
                             <td>{{ $user->email }}</td>
+                            <td>{{ $user->status }}</td>
                             <td>{{ $user->phone_no }}</td>
-                            <td>{{ $user->designation !== null ? $user->designation->name : '' }}</td>
+                            {{-- <td>{{ $user->designation !== null ? $user->designation->name : '' }}</td> --}}
+
+
                             <td>
                                 <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-outline-success">Edit</a>
                                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteUserModal{{ $user->id }}">
